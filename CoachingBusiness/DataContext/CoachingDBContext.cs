@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoachingBusiness.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace CoachingBusiness.DataContext
         public CoachingDBContext(DbContextOptions<CoachingDBContext> options) : base(options)
         {
         }
-        
+        public DbSet<User> Users { get; set; }
+        public DbSet<Models.Task> Tasks { get; set; }        
 
     }
 }
