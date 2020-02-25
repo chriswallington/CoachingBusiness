@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoachingBusiness", "CoachingBusiness\CoachingBusiness.csproj", "{7AA5AF05-D941-4B21-9E3A-8DE302CA50E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoachingBusinessDB.Test", "CoachingBusinessDB.Test\CoachingBusinessDB.Test.csproj", "{A37A182D-BFF6-4C47-8E63-D5655D753404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoachingBusiness.Test", "CoachingBusinessDB.Test\CoachingBusiness.Test.csproj", "{A37A182D-BFF6-4C47-8E63-D5655D753404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

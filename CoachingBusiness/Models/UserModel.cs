@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CoachingBusiness.Models
 {
-    public class User
+    public class UserModel
     {
         public int UserID { get; set; }
         public string Firstname { get; set; }
