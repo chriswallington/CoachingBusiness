@@ -13,7 +13,7 @@ namespace CoachingBusiness.DataContext
         {
         }
         public DbSet<UserModel> Users { get; set; }
-        public DbSet<Task> Tasks { get; set; }        
+        public DbSet<TaskModel> Tasks { get; set; }        
 
     }
 }
