@@ -8,6 +8,7 @@ namespace CoachingBusiness.Models
     public class TaskModel
     {
         public int Id { get; set; }
+        public int UserId { get; set; }
         public string TaskName { get; set; }
         public string Details { get; set; }
         public string Status { get; set; }

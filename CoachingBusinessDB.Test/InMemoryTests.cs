@@ -25,7 +25,5 @@ namespace CoachingBusiness.Test
             }
 
         }
-
-
     }
 }
