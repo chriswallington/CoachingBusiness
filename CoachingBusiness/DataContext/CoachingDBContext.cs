@@ -55,7 +55,7 @@ namespace CoachingBusiness.DataContext
                 }
                 );
 
-            modelBuilder.Entity<TaskModel>().
+
         }
     }
 
