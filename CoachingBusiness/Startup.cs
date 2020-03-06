@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoachingBusiness.DataContext;
+using CoachingBusiness.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,8 @@ namespace CoachingBusiness
         {
             services.AddRazorPages();
             services.AddDbContext<CoachingDBContext>(options => options.UseInMemoryDatabase(databaseName: "CoachingDB"));
+            services.AddIdentity<UserModel, IdentityRole>(config => { })
+                .AddEntityFrameworkStores<CoachingDBContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
