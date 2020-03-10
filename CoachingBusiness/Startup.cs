@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoachingBusiness.DataContext;
+using CoachingBusiness.Helpers;
 using CoachingBusiness.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,6 +52,7 @@ namespace CoachingBusiness
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.SeedTestDatabase(Configuration);
             }
             else
             {
