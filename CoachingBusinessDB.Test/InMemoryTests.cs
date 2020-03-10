@@ -14,8 +14,8 @@ namespace CoachingBusiness.Test
 
             using (var context = new CoachingDBContext(options))
             {
-                context.Users.Add(new CoachingBusiness.Models.UserModel { Id = 1, Firstname = "Chris", Surname = "Wallington", Role = "Coach" });
-                context.Users.Add(new CoachingBusiness.Models.UserModel { Id = 2, Firstname = "Laurence", Surname = "Webb", Role = "Client" });
+                context.Users.Add(new CoachingBusiness.Models.UserModel { Id = "1", Firstname = "Chris", Surname = "Wallington", Role = "Coach" });
+                context.Users.Add(new CoachingBusiness.Models.UserModel { Id = "2", Firstname = "Laurence", Surname = "Webb", Role = "Client" });
                 context.SaveChanges();
             }
 

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace CoachingBusiness
 {
@@ -29,8 +30,19 @@ namespace CoachingBusiness
         {
             services.AddRazorPages();
             services.AddDbContext<CoachingDBContext>(options => options.UseInMemoryDatabase(databaseName: "CoachingDB"));
-            services.AddIdentity<UserModel, IdentityRole>(config => { })
-                .AddEntityFrameworkStores<CoachingDBContext>();
+            services.AddIdentity<UserModel, IdentityRole>()
+                .AddEntityFrameworkStores<CoachingDBContext>()
+                .AddDefaultTokenProviders();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Name = "CoachingDB";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = "/Home/Login";
+            }
+
+
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +63,7 @@ namespace CoachingBusiness
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
